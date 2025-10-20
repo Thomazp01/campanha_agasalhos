@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("../partials/head"); %>
+
+  <body>
+    <%- include("../partials/menu"); %>
+
+    <main class="container">
+      <h1>Gerenciamento de Usuários</h1>
+
+      <!-- Formulário de criação -->
+      <form action="/usuariosadm/criar" method="POST" class="form">
+        <h3>Criar novo usuário</h3>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <label>
+          <input type="checkbox" name="adm" value="1"> Administrador
+        </label>
+        <label>
+          <input type="checkbox" name="ativo" value="1" checked> Ativo
+        </label>
+        <button type="submit">Criar</button>
+      </form>
+
+      <hr>
+
+      <!-- Tabela de usuários -->
+      <h3>Usuários cadastrados</h3>
+      <table border="1" cellpadding="6">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Administrador</th>
+            <th>Ativo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.cpf %></td>
+              <td><%= user.email %></td>
+              <td><%= user.adm ? 'Sim' : 'Não' %></td>
+              <td><%= user.ativo ? 'Sim' : 'Não' %></td>
+              <td>
+                <!-- Editar -->
+                <form action="/usuariosadm/editar/<%= user.id %>" method="POST" style="display:inline;">
+                  <input type="text" name="cpf" value="<%= user.cpf %>" required>
+                  <input type="email" name="email" value="<%= user.email %>" required>
+                  <input type="password" name="password" value="<%= user.password %>" required>
+                  <input type="number" name="adm" value="<%= user.adm %>" min="0" max="1">
+                  <input type="number" name="ativo" value="<%= user.ativo %>" min="0" max="1">
+                  <button type="submit">Salvar</button>
+                </form>
+
+                <!-- Deletar -->
+                <form action="/usuariosadm/deletar/<%= user.id %>" method="POST" style="display:inline;">
+                  <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+
+     <script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script> $('#cpf').mask('000.000.000-00', {reverse: true});</script>
+
+
+    <%- include("../partials/footer"); %>
+  </body>
+</html>

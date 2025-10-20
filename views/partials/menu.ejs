@@ -1,40 +1,53 @@
 <header>
-  <nav class="navbar">
-    <a href="/">
-      <div class="titulo-container">
-        <img src="../static/Img/Logo.png" alt="Logo Da Campanha" id="logoimg" />
-        <div class="tit">Campanha</div>
-      </div>
-    </a>
-
-    <!-- Botão do menu hamburguer (mobile) -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/"><input type="button" value="Home" /></a></li>
-      <li><a href="/sobre"><input type="button" value="Sobre" /></a></li>
-      <li><a href="/localizacao"><input type="button" value="Localização" /></a></li>
-      <li><a href="/equipe"><input type="button" value="Equipe" /></a></li>
-      <li>
-        <a href="/doacoes_doar">
-          <input type="button" 
-            <% if (!req.session.user) { %>
-              value="Doações"
-            <% } else { %>
-              value="Doações/Doar"
-            <% } %>
-          />
+  <nav class="navbar"> 
+    <div class="components-menu">
+      
+      <div class="components-menu-logo">
+        <a href="/">
+          <div class="titulo-container">
+            <img src="../static/Img/Logo.png" alt="Logo Da Campanha" id="logoimg" />
+            <div class="tit">SOL</div>
+          </div>
         </a>
-      </li>
+      </div>
+
+      <div class="components-menu-center">
+        <ul class="nav-links">
+          <li><a href="/" value="Home">HOME</a></li>
+          <li><a href="/sobre" value="Sobre">SOBRE</a></li>
+          <li><a href="/localizacao" value="Localização">LOCALIZAÇÃO</a></li>
+          <li>
+            <a href="/doacoes_doaruser"
+              <% if (!req.session.user) { %>
+                value="Doações"
+              <% } else { %>
+                value="Doações/Doar"
+              <% } %>>
+              CAMPANHAS
+            </a>
+          </li>
+
+          <% if (req.session.user && req.session.user.adm === 1) { %>
+            <li><a href="/usuariosadm" value="Usuários">USUÁRIOS</a></li>
+                 <li><a href="/doacoes_doar" value="Criar">CriarCampanha</a></li>
+          <% } %>
+        </ul>
+      </div>
+
       <% if (!req.session.user) { %>
-        <li><a href="/login"><input type="button" value="Login" /></a></li>
+          <li><a href="/cadastro"><input type="button" value="Cadastro"></a></li>
+          <li><a href="/login"><input type="button" value="Login"></a></li>
       <% } else { %>
-        <li><a href="/logout"><input type="button" value="Logout" /></a></li>
+          <li><a href="/logout"><input type="button" value="Logout"></a></li>
       <% } %>
-    </ul>
+
+      <!-- Botão do menu hamburguer (mobile) -->
+      <div class="components-menu-toggle" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+    </div>   
   </nav>
 </header>

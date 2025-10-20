@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("../partials/head"); %>
+
+  <body>
+    <%- include("../partials/menu"); %>
+
+    <main class="container" style="max-width: 800px; margin: 40px auto;">
+      <h1 style="text-align: center;">Criar Nova Campanha</h1>
+
+      <% if (sucesso) { %>
+        <div style="color: green; text-align:center; margin-bottom:10px;"><%= sucesso %></div>
+      <% } %>
+      <% if (erro) { %>
+        <div style="color: red; text-align:center; margin-bottom:10px;"><%= erro %></div>
+      <% } %>
+
+      <form action="/criarcampanha" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <label><b>Nome da Campanha:</b></label>
+        <input type="text" name="nome" required>
+
+        <label><b>Descrição:</b></label>
+        <textarea name="descricao" rows="3"></textarea>
+
+        <label><b>Data de Início:</b></label>
+        <input type="date" name="data_inicio" required>
+
+        <label><b>Data de Término:</b></label>
+        <input type="date" name="data_fim" required>
+
+        <hr>
+        <h3>Itens da Campanha</h3>
+        <div id="itens-container">
+          <div class="item" style="display:flex; gap:10px; margin-bottom:5px;">
+            <input type="text" name="nome_item[]" placeholder="Nome do item" required>
+            <input type="number" name="pontos[]" placeholder="Pontos" required>
+          </div>
+        </div>
+
+        <button type="button" onclick="adicionarItem()">+ Adicionar Item</button>
+        <button type="submit">Criar Campanha</button>
+      </form>
+    </main>
+
+    <script>
+      function adicionarItem() {
+        const container = document.getElementById('itens-container');
+        const novoItem = document.createElement('div');
+        novoItem.classList.add('item');
+        novoItem.style.display = "flex";
+        novoItem.style.gap = "10px";
+        novoItem.style.marginBottom = "5px";
+        novoItem.innerHTML = `
+          <input type="text" name="nome_item[]" placeholder="Nome do item" required>
+          <input type="number" name="pontos[]" placeholder="Pontos" required>
+          <button type="button" onclick="this.parentElement.remove()">Remover</button>
+        `;
+        container.appendChild(novoItem);
+      }
+    </script>
+  </body>
+</html>

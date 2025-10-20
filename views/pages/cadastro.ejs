@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include("../partials/head"); %>
+
+<body>
+  <%- include("../partials/menu"); %>
+
+  <div class="caixa-login">
+
+    <img src="/static/img/Log.jpg" alt="Cadastro" class="avatar" />
+
+    <h2>Cadastro</h2>
+
+    <form action="/cadastro" method="POST" class="form-cadastro">
+
+      <input type="text" id="cpf" name="cpf" class="input-form-login"
+             placeholder="CPF" required maxlength="11" />
+
+      <input type="email" id="email" name="email" class="input-form-login"
+             placeholder="E-MAIL" required />
+
+      <input type="password" id="password" name="password" class="input-form-login"
+             placeholder="Senha" required minlength="8" />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <!-- Mostrar erro se o backend passar -->
+    <% if (erro) { %>
+      <p style="color: red; margin-top: 10px;"><%= erro %></p>
+    <% } %>
+
+    <!-- Mostrar sucesso se o backend passar -->
+    <% if (sucesso) { %>
+      <p style="color: green; margin-top: 10px;"><%= sucesso %></p>
+    <% } %>
+
+    <p style="margin-top: 15px;">
+      Já possui conta? <a href="/login">Faça login</a>
+    </p>
+
+  </div>
+
+<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script> $('#cpf').mask('000.000.000-00', {reverse: true});</script>
+
+  <%- include("../partials/footer"); %>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/*Biblioteca de Animações*/
+
+/*Texto Gradient*/
+@keyframes gradientText{
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 200% 200%; }
+    75% { background-position: 50% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+/*Gira*/
+@keyframes gira{
+    0% {
+      transform: scale(1) rotateZ(0);
+    }
+    50% {
+      transform: scale(1.8) rotateZ(180deg);
+    }
+    100%{ 
+      transform: scale(1) rotateZ(360deg);
+    }
+}
+
+/*Entrada FadeIn*/
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/*Shadow-drop*/
+@keyframes shadow-drop {
+    0% {
+      box-shadow: 0 0 0 #71848a;
+    }
+    50% {
+      box-shadow: 0 0 20px #71848a;
+    }
+    100%{
+      box-shadow: 0 0 0 #71848a;
+    }
+}
+
+/*Entrada Letras*/
+@keyframes textando {
+    0% {
+      letter-spacing: 0.7rem;
+      filter: blur(6px);
+      opacity: 0;
+    }
+    100% {            
+      filter: blur(0px);
+      opacity: 1;
+    }
+}
+
+
+/*KEYFRAME DA FIAP*/

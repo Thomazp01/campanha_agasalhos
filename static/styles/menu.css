@@ -1,0 +1,155 @@
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.80); 
+  backdrop-filter: blur(10px); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+  
+.navbar{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container principal */
+.components-menu{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Logo com Título */
+.components-menu-logo{
+  display: flex;
+  align-items: center;
+}
+
+#logoimg{
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.titulo-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tit{
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  background: linear-gradient(70deg, #ffffff, #09fcfc);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+
+  animation: gradientText 5s ease-in-out infinite;
+}
+
+li, a{
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+}
+/* LINKS CENTRAIS */
+.components-menu-center .nav-links{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav-links li a{
+  font-size: 15px;
+  font-weight: 500;
+  color: #d0d0d0ad;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover{
+  color: #ffffff;
+  text-shadow: 0 0 4px #fff;
+}
+
+/* LOGIN/LOGOUT (direita) */
+
+.components-menu-right .login-links{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.components-menu-right a{
+  font-size: 10px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  color: #00fbff;
+  border: 1px solid #00fbff;
+  transition: 0.4s;
+}
+
+.components-menu-right a:hover{
+  background: #d6eadf;
+  color: #5e0101;
+  border: none;
+}
+
+/* HAMBURGER */
+/* ARRUMAR EMMMM NÃO ESQUECEEEE*/
+.components-menu-toggle{
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.components-menu-toggle .bar{
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.titulo-container:hover #logoimg{
+  animation: gira 0.65s linear both;
+}
+
+@keyframes gira{
+  0% {
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    transform: scale(1.8) rotateZ(180deg);
+  }
+  100%{ 
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+@keyframes gradientText{
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 200% 200%; }
+    75% { background-position: 50% 100%; }
+    100% { background-position: 0% 50%; }
+}

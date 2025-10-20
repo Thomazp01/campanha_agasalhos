@@ -5,75 +5,46 @@
 
 <body>
 
-    <video controls autoplay muted loop id="bg-video">
-        <source src="https://cdn.pixabay.com/video/2019/03/04/21782-321298091_small.mp4" type="video/mp4"> 
-        Seu navegador não suporta vídeo.
-    </video>
-
     <%- include("../partials/menu"); %>
 
     <main>
-
         <section class="sobre">
-          <h1>Campanha do Agasalho no SENAI Sumaré Dr. Celso Charuri</h1>
-          <img src="../static/Img/agasalhos.png" alt="Roupas dobradas" id="img-s">
+          <h1>Gerador de Campanhas <br> SENAI Sumaré Dr. Celso Charuri</h1>
           
-          <article>
           <p id="dif">
               Sua doação pode fazer a diferença para quem não tem como se proteger do frio. 
               Casacos, blusas, calças, meias e cobertores são muito bem-vindos!
-            </p>
+          </p>
+
+          <!-- Botão de ação -->
+          <a href="/localizacao" class="btn-ajudar">Quero Ajudar ❤️</a>
+
+          <article>
+            <h5>👥 Quem pode Participar:</h5>
+            <p>Alunos do CAI, CT, Cursos Livres, funcionários da escola e membros da comunidade.</p>
           </article>
 
           <article>
-            <p> 
-              A organização e a estratégia de arrecadação serão responsabilidade dos docentes
-              referenciais, junto às suas turmas.
+              <h5>📅 Período de Arrecadação:</h5>
+              <p>De 08/04 até às 22h do dia 10/06/2025.</p>
           </article>
 
           <article>
-              <h5>Quem pode Participar:</h5>
-              <p>
-              Alunos do CAI, CT, Cursos Livres, funcionários da escola e membros da comunidade.
-              </p>
+              <h5>⚠️ Importante:</h5>
+              <p>As roupas, agasalhos, mantas e cobertores doados devem estar limpos e em bom estado de
+              conservação, prontos para uso.</p>
           </article>
 
           <article>
-              <h5>Período de Arrecadação:</h5>
-              <p>
-              De 08/04 até às 22h do dia 10/06/2025.
-              </p>
+              <h5>🚫 Não serão aceitas:</h5>
+              <p>Roupas íntimas, bolsas, gravatas, cintos, sapatos abertos, roupas sujas, mofadas ou rasgadas.</p>
           </article>
 
-          <article>
-              <h5>Importante:</h5>
-              <p>
-              As roupas, agasalhos, mantas e cobertores doados devem estar limpos e em bom estado de
-              conservação, prontos para uso.
-              </p>
-          </article>
-
-          <article>
-            
-              <h5>Não serão aceitas:</h5>
-              <p>
-              🚫Roupas íntimas <br>
-              🚫Bolsas <br>
-              🚫Gravatas <br>
-              🚫Cintos <br>
-              🚫Sapatos abertos <br>
-              🚫Roupas sujas, mofadas ou rasgadas <br>
-            </p>
-          </article>
-
-          <article>
-            <p>
-              📍 Ponto de coleta: SENAI Sumaré – Av. Rebouças, 3965
-              <br>
-              📞 Fale conosco: (19) 1234-5678
-              <br>
-              📱 Instagram: @senai_sumare
-            </p>
+          <article id="ponto-coleta">
+            <h5>📍 Ponto de coleta:</h5>
+            <p>SENAI Sumaré – Av. Rebouças, 3965</p>
+            <p>📞 Fale conosco: (19) 1234-5678</p>
+            <p>📱 Instagram: @senai_sumare</p>
           </article>
 
           <article>
@@ -82,11 +53,8 @@
             </p>
           </article>
         </section>
-
     </main>
 
     <%- include("../partials/footer"); %> 
-    
-
 </body>
 </html>

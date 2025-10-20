@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.status.ativa {
+  color: green;
+  font-weight: bold;
+}
+
+.status.encerrada {
+  color: red;
+  font-weight: bold;
+}
+
+.btn-ver {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-ver:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}

@@ -7,24 +7,31 @@
 
   <%- include("../partials/menu"); %>
 
-  <main class="content">
+  <main>
 
     <div class="caixa-login" id="caixa-login">
 
-      <h2>Faça seu Login</h2>
-
-      <img src="/static/img/Log.jpg" alt="Usuário" class="avatar" />
+      <img src="/static/img/Log.jpg" alt="Usuário" class="avatar" /><!--COLOCAR A LOGO DO SITE EMM
+      NÃO PODE ESQUECER-->
+      
+      <h2>LOGIN</h2>
 
       <form action="/login" method="POST">
 
-        <label for="username">Nome</label>
-        <input type="text" id="username" name="username" placeholder="Digite seu Nome" class="input-form" required />
 
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" placeholder="Digite sua Senha" class="input-form" required />
+        <!--<label for="username">Nome</label>-->
+        <input type="text" id="cpf" name="cpf" placeholder="CPF" class="input-form-login" required />
 
-        <div class="fancy">
-          <button type="submit">Entrar</button>
+
+        <!--<label for="password">Senha</label-->
+        <input type="password" id="password" name="password" placeholder="Senha" class="input-form-login" required />
+
+        <div>
+          <button type="submit" class="">Entrar</button>
+        </div>
+
+        <div class="login-link-Cadastro">
+          <a href="/cadastro">Casdastrar</a>
         </div>
         
       </form>
@@ -36,6 +43,12 @@
     </div>
 
   </main>
+  
+
+  <script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script> $('#cpf').mask('000.000.000-00', {reverse: true});</script>
 
   <%- include("../partials/footer"); %>
 

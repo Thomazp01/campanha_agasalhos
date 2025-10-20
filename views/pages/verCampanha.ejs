@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Doações da Campanha <%= campanha.id %></title>
+    <style>
+      table { border-collapse: collapse; width: 60%; margin-bottom: 20px; }
+      th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+      th { background-color: #4CAF50; color: white; }
+      h2 { margin-top: 30px; }
+    </style>
+  </head>
+  <body>
+    <h1>📊 Campanha ID: <%= campanha.id %></h1>
+
+    <% Object.keys(turmasDoacoes).forEach(turmaId => { %>
+      <h2>Turma: <%= turmasDoacoes[turmaId].sigla %></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Pontos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% turmasDoacoes[turmaId].itens.forEach(i => { %>
+            <tr>
+              <td><%= i.nome %></td>
+              <td><%= i.quantidade %></td>
+              <td><%= i.pontos %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% }) %>
+
+    <button onclick="window.location.href='/tabela'">Voltar</button>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+/*DIV Principal*/
+.caixa-login{
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 110px auto;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 450px;
+    width: 100%;
+    color: #fff;
+    transition: 1s;
+}
+
+.caixa-login:hover{
+  animation: shadow-drop 0.5s linear forwards;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes shadow-drop {
+  0% {
+    box-shadow: 0 0 0 #71848a;
+  }
+  50% {
+    box-shadow: 0 0 20px #71848a;
+  }
+  100%{
+    box-shadow: 0 0 0 #71848a;
+  }
+}
+
+/*Imagem Avatar*/
+.avatar{
+    margin-top: 10px;
+    border-radius: 360px;
+    width: 110px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 0 25px #3e3e32;
+}
+
+/* Título da Caixa de Login */
+.caixa-login h2{
+    animation: textando 0.7s linear both;;
+    margin-bottom: 10px;
+    color: #78fecf;
+    text-shadow: 0 0 10px #00d0ff;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+}
+
+@keyframes textando{
+  0% {
+    letter-spacing: 0.7rem;
+    filter: blur(6px);
+    opacity: 0;
+  }
+  100% {            
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/* Inputs minimalistas */
+.input-form-login{
+    width: 100%;
+    border-radius: 7px;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    color: #fff;
+    transition: 0.3s;
+}
+  
+.input-form-login::placeholder{
+  color: #ffffff;
+}
+    
+.input-form-login:focus{
+  border-bottom: 2px solid #fff;
+}
+
+/* Hover dos Inputs */
+input[type="text"]:hover,
+input[type="password"]:hover {
+    background-color: #02013d40;
+    color: #fff;
+}
+
+label{
+    text-align: left;
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #7cdedc;
+    font-size: 22px;
+}  
+  
+/* Link para Cadastro */
+.login-link-Cadastro {
+  margin-top: 20px;
+}
+
+.login-link-Cadastro a {
+  color: #0095ffd1;
+  font-size: 1.2rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.3s;
+  font-weight: bolder;
+}
+
+.login-link-Cadastro a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Botões */
+
+#btnLogin{
+  font-size: 22px;
+  background: linear-gradient(45deg, #98d9eb,#01baef);
+  font-weight: bolder;
+  padding: 5px;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#btnLogin:hover{
+  font-size: 25px;
+  background: linear-gradient(45deg,#855ebc, #4545bf);
+  color: #2e0550;
+}
+
+button {
+  width: 30%;
+  padding: 12px;
+  margin-top: 25px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #faa613;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 1s;
+}
+
+button:hover {
+  background-color: #faa613;
+  box-shadow: 0 0 40px #ffae00;
+  box-shadow: 0 0 80px #ffae00;
+}
+
+#btnrank{
+  width: 20%;
+  padding: 12px;
+  margin-top: 25px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ffd000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#btnrank:hover {
+  background-color: #ffd000;
+  box-shadow: 0 0 40px #ffae00;
+  box-shadow: 0 0 80px #ffae00;
+}
